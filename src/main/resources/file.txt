@@ -4,3 +4,4 @@
 строка 3
 ....
 строка NThis is new text to be written to the file.
+This is new text to be written to the file.
