@@ -19,17 +19,25 @@ public class FileReadWriteSample {
             while ((line = bufferedReader.readLine()) != null) {
                 System.out.println(line);
             }
+            bufferedReader.close();
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
             logger.error("Error in reading file: " + e.getMessage());
         }
 
+
         //writing new data
         try {
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(filePath, true));
+            bufferedWriter.write(newText);
+            bufferedWriter.newLine();
+            bufferedWriter.flush();
+            bufferedWriter.close();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            logger.error("Error in writing to file: " + e.getMessage());
         }
+
+        logger.info("Program has finished successfully");
     }
 }

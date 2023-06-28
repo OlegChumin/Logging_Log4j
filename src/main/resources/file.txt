@@ -3,4 +3,4 @@
 строка 2
 строка 3
 ....
-строка N
+строка NThis is new text to be written to the file.
